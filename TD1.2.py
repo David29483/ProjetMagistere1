@@ -77,6 +77,6 @@ def tri_selection(tab) :
             
             if tab[i] < tab 
         
-        
+print("cc")
     
     
