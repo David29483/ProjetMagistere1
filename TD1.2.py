@@ -80,3 +80,4 @@ def tri_selection(tab) :
 print("cc")
     
     
+gzyrzgeàç
