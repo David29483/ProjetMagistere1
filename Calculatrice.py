@@ -6,7 +6,6 @@ Created on Fri Sep 20 20:38:27 2024
 @author: louislenguin
 """
 
-#TD1.2
-
+#Calculatrice
 
 
