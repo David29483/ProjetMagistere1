@@ -26,4 +26,3 @@ soustraction_texte = g.afficherTexte("-",355,525,"pink")
 g.attendreClic()
 g.actualiser()
 i=3
-
