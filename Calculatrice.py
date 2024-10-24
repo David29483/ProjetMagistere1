@@ -23,6 +23,11 @@ addition_texte = g.afficherTexte("+",255,525,"pink")
 soustraction = g.dessinerRectangle(331,500,49,49,"white")
 soustraction_texte = g.afficherTexte("-",355,525,"pink")
 
+valeur1 = g.dessinerRectangle(30,300,100,100,"blue")
+valeur2 = g.dessinerRectangle(150,300,100,100,"blue")
+
+affiche_resultat = g.dessinerRectangle(100,100,200,100,"white")
+
 g.attendreClic()
 g.actualiser()
-i=3
+
