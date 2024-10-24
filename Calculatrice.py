@@ -8,7 +8,10 @@ Created on Fri Sep 20 20:38:27 2024
 
 #Calculatrice
 
+
 from tkiteasy import *
+
+
 
 g = ouvrirFenetre(400,600)
 multiplication = g.dessinerRectangle(30,500,49,49,"white")
