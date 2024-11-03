@@ -71,26 +71,26 @@ while Fin == False:
             valeur2 = input("Veuillez entrer un deuxième nombre entier : ")
 
     valeur2_texte = calculatrice.g.afficherTexte(valeur2, 200, 350, "white")
-
+    resultat = 0
     if calcul == calculatrice.multiplication or calcul == calculatrice.multiplication_texte:
-        resultat = valeur1 * valeur2
+        resultat = int(valeur1) * int(valeur2)
         print(resultat)
         calculatrice.g.afficherTexte(f"{valeur1} x {valeur2} = {resultat}", 150, 150, "red")
 
     if calcul == calculatrice.addition or calcul == calculatrice.addition_texte:
-        resultat = valeur1 + valeur2
+        resultat = int(valeur1) + int(valeur2)
         print(resultat)
 
         calculatrice.g.afficherTexte(f"{valeur1} + {valeur2} = {resultat}", 150, 150, "red")
 
     if calcul == calculatrice.division or calcul == calculatrice.division_texte:
-        resultat = valeur1 / valeur2
+        resultat = int(valeur1) / int(valeur2)
         print(resultat)
 
         calculatrice.g.afficherTexte(f"{valeur1} / {valeur2} = {resultat}", 150, 150, "red")
 
     if calcul == calculatrice.soustraction or calcul == calculatrice.soustraction_texte:
-        resultat = valeur1 - valeur2
+        resultat = int(valeur1) - int(valeur2)
         print(resultat)
 
         calculatrice.g.afficherTexte(f"{valeur1} - {valeur2} = {resultat}", 150, 150, "red")
