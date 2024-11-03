@@ -39,6 +39,7 @@ class Calculatrice():
 
 calculatrice = Calculatrice()
 calculatrice.initGraph()
+i = 0
 Fin = False
 while Fin == False:
     ok = False
@@ -61,6 +62,7 @@ while Fin == False:
         clic = calculatrice.g.attendreClic()
         calcul = calculatrice.g.recupererObjet(clic.x, clic.y)
 
+
     valeur2 = input("Veuillez entrer un nombre entier : ")
     ok = False
     while ok != True:
@@ -72,28 +74,49 @@ while Fin == False:
 
     valeur2_texte = calculatrice.g.afficherTexte(valeur2, 200, 350, "white")
     resultat = 0
+
+    if i > 0 :
+      calculatrice.g.supprimer(resultat_texte)
+
     if calcul == calculatrice.multiplication or calcul == calculatrice.multiplication_texte:
         resultat = int(valeur1) * int(valeur2)
         print(resultat)
-        calculatrice.g.afficherTexte(f"{valeur1} x {valeur2} = {resultat}", 150, 150, "red")
+
+        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} x {valeur2} = {resultat}", 150, 150, "red")
+
+        calculatrice.g.supprimer(valeur2_texte)
+        calculatrice.g.supprimer(valeur1_texte)
+        i +=1
 
     if calcul == calculatrice.addition or calcul == calculatrice.addition_texte:
         resultat = int(valeur1) + int(valeur2)
         print(resultat)
+        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} + {valeur2} = {resultat}", 150, 150, "red")
 
-        calculatrice.g.afficherTexte(f"{valeur1} + {valeur2} = {resultat}", 150, 150, "red")
+        calculatrice.g.supprimer(valeur2_texte)
+        calculatrice.g.supprimer(valeur1_texte)
+        i = i+1
 
     if calcul == calculatrice.division or calcul == calculatrice.division_texte:
         resultat = int(valeur1) / int(valeur2)
+
         print(resultat)
 
-        calculatrice.g.afficherTexte(f"{valeur1} / {valeur2} = {resultat}", 150, 150, "red")
+        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} / {valeur2} = {resultat}", 150, 150, "red")
+        calculatrice.g.supprimer(valeur2_texte)
+        calculatrice.g.supprimer(valeur1_texte)
+        i = i+1
 
     if calcul == calculatrice.soustraction or calcul == calculatrice.soustraction_texte:
         resultat = int(valeur1) - int(valeur2)
+
         print(resultat)
 
-        calculatrice.g.afficherTexte(f"{valeur1} - {valeur2} = {resultat}", 150, 150, "red")
+        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} - {valeur2} = {resultat}", 150, 150, "red")
+        calculatrice.g.supprimer(valeur2_texte)
+        calculatrice.g.supprimer(valeur1_texte)
+        i = i+1
 
     calculatrice.g.actualiser()
     clic = calculatrice.g.attendreClic()
+
