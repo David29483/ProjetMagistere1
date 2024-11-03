@@ -97,6 +97,7 @@ while Fin == False:
         calculatrice.g.supprimer(valeur1_texte)
         i = i+1
 
+
     if calcul == calculatrice.division or calcul == calculatrice.division_texte:
         resultat = int(valeur1) / int(valeur2)
 
