@@ -95,25 +95,29 @@ while Fin == False:
 
     if calcul_final == calculatrice.multiplication or calcul_final == calculatrice.multiplication_texte:
         resultat = valeur1 * valeur2
-        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} x {valeur2} = {resultat}", 150, 150, "red")
-        print(resultat)
+        resultat_arrondi = round(resultat,2)
+        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} x {valeur2} = {resultat_arrondi}", 175, 150, "red")
+        print(resultat_arrondi)
 
     if calcul_final == calculatrice.addition or calcul_final == calculatrice.addition_texte:
         resultat = valeur1 + valeur2
-        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} + {valeur2} = {resultat}", 150, 150, "red")
+        resultat_arrondi = round(resultat, 2)
+        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} + {valeur2} = {resultat_arrondi}", 175, 150, "red")
 
-        print(resultat)
+        print(resultat_arrondi)
 
     if calcul_final == calculatrice.division or calcul_final == calculatrice.division_texte:
         resultat = valeur1 / valeur2
-        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} / {valeur2} = {resultat}", 150, 150, "red")
+        resultat_arrondi = round(resultat, 2)
+        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} / {valeur2} = {resultat_arrondi}", 175, 150, "red")
 
-        print(resultat)
+        print(resultat_arrondi)
 
     if calcul_final == calculatrice.soustraction or calcul_final == calculatrice.soustraction_texte:
         resultat = valeur1 - valeur2
-        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} - {valeur2} = {resultat}", 150, 150, "red")
-        print(resultat)
+        resultat_arrondi = round(resultat, 2)
+        resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} - {valeur2} = {resultat_arrondi}", 175, 150, "red")
+        print(resultat_arrondi)
 
     annonce = calculatrice.g.afficherTexte("Cliquez n'importe où pour réaliser un autre calcul", 200, 190, "red", 8)
     calculatrice.g.actualiser()
