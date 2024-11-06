@@ -40,19 +40,18 @@ class Calculatrice():
 
         self.g.actualiser()
 
-    def PremierChiffre(self):
+    def Chiffre(self):
         ok = False
-        self.valeur1 = input("Veuillez entrer un nombre entier : ")
+        valeur = input("Veuillez entrer un nombre entier : ")
 
         while ok != True:
             try:
-                self.valeur1 = int(self.valeur1)
+                valeur = int(valeur)
                 ok = True
             except ValueError:
-                self.valeur1 = input("Veuillez entrer un nombre entier : ")
+                valeur = input("Veuillez entrer un nombre entier : ")
 
-        self.valeur1_texte = calculatrice.g.afficherTexte(self.valeur1, 75, 350, "white")
-        calculatrice.g.actualiser()
+        return valeur
 
 
 calculatrice = Calculatrice()
@@ -60,7 +59,10 @@ calculatrice.initGraph()
 Fin = False
 while Fin == False:
 
-    calculatrice.PremierChiffre()
+    valeur1 = calculatrice.Chiffre()
+    valeur1_texte = calculatrice.g.afficherTexte(valeur1, 75, 350, "white")
+    calculatrice.g.actualiser()
+
     calcul = None
     clic = None
 
@@ -71,42 +73,44 @@ while Fin == False:
         if calcul == calculatrice.bouton_retour or calcul == calculatrice.fleche:
             calculatrice.g.supprimer(calculatrice.valeur1_texte)
             calculatrice.g.actualiser()
-            calculatrice.PremierChiffre()
+            valeur1 = calculatrice.Chiffre()
+            valeur1_texte = calculatrice.g.afficherTexte(valeur1, 75, 350, "white")
+            calculatrice.g.actualiser()
 
-    valeur2 = input("Veuillez entrer un nombre entier : ")
-    ok = False
-    while ok != True:
-        try:
-            valeur2 = int(valeur2)
-            ok = True
-        except ValueError:
-            valeur2 = input("Veuillez entrer un deuxième nombre entier : ")
-
+    valeur2 = calculatrice.Chiffre()
     valeur2_texte = calculatrice.g.afficherTexte(valeur2, 200, 350, "white")
 
     if calcul == calculatrice.multiplication or calcul == calculatrice.multiplication_texte:
-        resultat = calculatrice.valeur1 * valeur2
+        resultat = valeur1 * valeur2
         print(resultat)
-        calculatrice.g.afficherTexte(f"{calculatrice.valeur1} x {valeur2} = {resultat}", 150, 150, "red")
+        resultat_affichage = calculatrice.g.afficherTexte(f"{valeur1} x {valeur2} = {resultat}", 150, 150, "red")
 
     if calcul == calculatrice.addition or calcul == calculatrice.addition_texte:
-        resultat = calculatrice.valeur1 + valeur2
+        resultat = valeur1 + valeur2
         print(resultat)
 
-        calculatrice.g.afficherTexte(f"{calculatrice.valeur1} + {valeur2} = {resultat}", 150, 150, "red")
+        resultat_affichage = calculatrice.g.afficherTexte(f"{valeur1} + {valeur2} = {resultat}", 150, 150, "red")
 
     if calcul == calculatrice.division or calcul == calculatrice.division_texte:
-        resultat = calculatrice.valeur1 / valeur2
+        resultat = valeur1 / valeur2
         print(resultat)
 
-        calculatrice.g.afficherTexte(f"{calculatrice.valeur1} / {valeur2} = {resultat}", 150, 150, "red")
+        resultat_affichage = calculatrice.g.afficherTexte(f"{valeur1} / {valeur2} = {resultat}", 150, 150, "red")
 
     if calcul == calculatrice.soustraction or calcul == calculatrice.soustraction_texte:
-        resultat = calculatrice.valeur1 - valeur2
+        resultat = valeur1 - valeur2
         print(resultat)
 
-        calculatrice.g.afficherTexte(f"{calculatrice.valeur1} - {valeur2} = {resultat}", 150, 150, "red")
+        resultat_affichage = calculatrice.g.afficherTexte(f"{valeur1} - {valeur2} = {resultat}", 150, 150, "red")
 
+    annonce = calculatrice.g.afficherTexte("Cliquez n'importe où pour réaliser un autre calcul", 200, 190, "red", 8)
     calculatrice.g.actualiser()
+
     clic = calculatrice.g.attendreClic()
+    calculatrice.g.supprimer(resultat_affichage)
+    calculatrice.g.supprimer(valeur1_texte)
+    calculatrice.g.supprimer(valeur2_texte)
+    calculatrice.g.supprimer(annonce)
+    calculatrice.g.actualiser()
+
 
