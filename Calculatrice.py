@@ -36,7 +36,10 @@ class Calculatrice():
         self.affiche_resultat = self.g.dessinerRectangle(100, 100, 200, 100, "white")
 
         self.bouton_retour = self.g.dessinerRectangle(300, 300, 50, 50, "red")
-        self.fleche = self.g.afficherTexte("⬅︎", 320, 320, "pink")
+        self.fleche = self.g.afficherTexte("⬅︎", 320, 320, "white")
+
+        self.bouton_egal = self.g.dessinerRectangle(300, 400, 50, 50, "green")
+        self.egal = self.g.afficherTexte("=", 325, 425, "white")
 
         self.g.actualiser()
 
@@ -71,7 +74,7 @@ while Fin == False:
         calcul = calculatrice.g.recupererObjet(clic.x, clic.y)
 
         if calcul == calculatrice.bouton_retour or calcul == calculatrice.fleche:
-            calculatrice.g.supprimer(calculatrice.valeur1_texte)
+            calculatrice.g.supprimer(valeur1_texte)
             calculatrice.g.actualiser()
             valeur1 = calculatrice.Chiffre()
             valeur1_texte = calculatrice.g.afficherTexte(valeur1, 75, 350, "white")
@@ -83,25 +86,25 @@ while Fin == False:
     if calcul == calculatrice.multiplication or calcul == calculatrice.multiplication_texte:
         resultat = valeur1 * valeur2
         print(resultat)
-        resultat_affichage = calculatrice.g.afficherTexte(f"{valeur1} x {valeur2} = {resultat}", 150, 150, "red")
+
 
     if calcul == calculatrice.addition or calcul == calculatrice.addition_texte:
         resultat = valeur1 + valeur2
         print(resultat)
 
-        resultat_affichage = calculatrice.g.afficherTexte(f"{valeur1} + {valeur2} = {resultat}", 150, 150, "red")
 
     if calcul == calculatrice.division or calcul == calculatrice.division_texte:
         resultat = valeur1 / valeur2
         print(resultat)
 
-        resultat_affichage = calculatrice.g.afficherTexte(f"{valeur1} / {valeur2} = {resultat}", 150, 150, "red")
 
     if calcul == calculatrice.soustraction or calcul == calculatrice.soustraction_texte:
         resultat = valeur1 - valeur2
         print(resultat)
 
-        resultat_affichage = calculatrice.g.afficherTexte(f"{valeur1} - {valeur2} = {resultat}", 150, 150, "red")
+
+    if calcul == calculatrice.bouton_egal or calcul == calculatrice.egal :
+             resultat_affichage = calculatrice.g.afficherTexte(f"{valeur1} - {valeur2} = {resultat}", 150, 150, "red")
 
     annonce = calculatrice.g.afficherTexte("Cliquez n'importe où pour réaliser un autre calcul", 200, 190, "red", 8)
     calculatrice.g.actualiser()
