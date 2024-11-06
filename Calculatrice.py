@@ -41,6 +41,7 @@ class Calculatrice():
         self.bouton_egal = self.g.dessinerRectangle(300, 400, 50, 50, "green")
         self.egal = self.g.afficherTexte("=", 325, 425, "white")
 
+        self.titre = self.g.afficherTexte("CALCULATRICE", 200,50,"white",26)
         self.g.actualiser()
 
     def Chiffre(self):
