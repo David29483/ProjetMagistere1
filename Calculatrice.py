@@ -106,7 +106,6 @@ while Fin == False:
         resultat_texte = calculatrice.g.afficherTexte(f"{valeur1} + {valeur2} = {resultat_arrondi}", 175, 150, "red")
 
         print(resultat_arrondi)
-
     if calcul_final == calculatrice.division or calcul_final == calculatrice.division_texte:
         resultat = valeur1 / valeur2
         resultat_arrondi = round(resultat, 2)
